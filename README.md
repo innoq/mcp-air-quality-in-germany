@@ -26,15 +26,29 @@ Die Idee für das MCP ist es, das "Spielen" mit den Luftverschmutzungsdaten des 
 * get_all_stations_nearby_today: Holt alle Messtationen, die in der Nähe einer angegebenen Postleitzahl sind, und nutzt zum Filtern von nahegelegenen Messstationen die erste Ziffer der Postleitzahl. 
 * get_quality_for_station_now: Holt die aktuelle Luftqualität für eine bestimmte Messstation.
 * get_quality_for_station: Holt die Luftqualität für einen anzugebenden Zeitraum für eine bestimmte Messstation.
-* get_components_by_number: Gibt alle laut Dokumentation gemessenen Komponenten und deren Kennziffer zurück. 
+* get_components_by_number: Gibt alle laut Dokumentation gemessenen Komponenten und deren Kennziffer zurück.
 
-## 6. Mögliche Verfeinerungen in der Zukunft
+## 6. Konfiguration
+
+```json
+"mcp-air-quality-in-germany": {
+    "command": "<path-to-uv>",
+    "args": [
+        "--directory",
+        "<path-to-project-directory>",
+        "run",
+        "airdata.py"
+    ]
+}
+```
+
+## 7. Mögliche Verfeinerungen in der Zukunft
 
 * Kombination mit anderen Daten-MCPs: Denkbar wären beispielsweise andere Umweltdaten des Umweltbundesamts, um Korrelationen zu beobachten (Beispielprompt: "Wie hat sich die Konzentration von Blei im Feinstaub nahe dem Müggelsee verändert? Korreliert das mit der Belastung von Fischen im Müggelsee?")
 * Suche nach Stationen in der Umgebung mithilfe von Koordinaten anstatt Postleitzahlen durch API-Call zu Kartenservice, der die Koordinaten zu eingegebenen Adressen holt
 * Luftqualitätsvorhersage
 
-## 7. Architektonische Entscheidungen
+## 8. Architektonische Entscheidungen
 
 * Parameterinputs durch das LLM werden auf Plausibilität überprüft, damit das LLM ggf. einen neuen Call mit besseren Inputs starten kann
 * API-Outputs werden nicht validiert, sondern können ggf. vom LLM auf Plausibilität überprüft werden
