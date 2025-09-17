@@ -1,0 +1,17 @@
+[project]
+name = "mcp-air-quality-in-germany"
+version = "0.1.0"
+description = "MCP to make the Umweltbundesamt air quality API more accessible for humans and data analysis"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Lara Pourabdolrahim", email = "lara.pourabdolrahim@innoq.com"}
+]
+keywords = ["mcp", "luftdaten", "air-quality", "luftqualität", "germany", "environmental-data", "umweltdaten", "pollution", "schadstoffe", "monitoring"]
+requires-python = ">=3.13"
+dependencies = [
+    # Direct imports in the codebase
+    "httpx>=0.28.1",      # used in airdata.py
+    "mcp>=1.7.1",         # FastMCP server used in airdata.py
+    "pydantic>=2.11.4",   # used in data_validation_models.py
+]
