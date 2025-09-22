@@ -3,7 +3,7 @@ name = "mcp-air-quality-in-germany"
 version = "0.1.0"
 description = "MCP to make the Umweltbundesamt air quality API more accessible for humans and data analysis"
 readme = "README.md"
-license = "MIT"
+license = "Apache License, Version 2.0"
 authors = [
     {name = "Lara Pourabdolrahim", email = "lara.pourabdolrahim@innoq.com"}
 ]
